@@ -4,6 +4,8 @@
   --text: #111;
   --card: #fff;
   --line: #e8ddd2;
+  --muted: #80372b;
+  --tag-bg: #fffaf6;
 }
 
 html, body, .typora-export { 
@@ -13,123 +15,309 @@ html, body, .typora-export {
 }
 
 #write {
-  max-width: 860px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 40px; /* 版心留白 */
+  padding: 36px 36px 56px; /* 版心留白 */
   background: transparent;
   color: var(--text);
   /* 纯正的瑞士风格无衬线字体栈 */
   font-family: "Helvetica Neue", Helvetica, Arial, "Noto Sans SC", "Microsoft YaHei", sans-serif;
-  line-height: 1.7;
-  font-size: 16px;
+  line-height: 1.58;
+  font-size: 15px;
 }
 
 /* ===== Typography Hierarchy (字体层级) ===== */
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6 {
   color: var(--text);
   font-weight: 700;
-  margin-top: 2em;
-  margin-bottom: 0.8em;
-  line-height: 1.3;
+  margin-top: 1.6em;
+  margin-bottom: 0.65em;
+  line-height: 1.18;
 }
 
 #write h1 {
-  font-size: 2.4em;
-  border-bottom: 3px solid var(--accent);
-  padding-bottom: 12px;
-  margin-top: 1em;
-  letter-spacing: -0.02em; /* 大标题稍微收紧字距，增加力量感 */
+  font-size: 2.85em;
+  letter-spacing: -0.035em; /* 大标题稍微收紧字距，增加力量感 */
+  margin-top: 0;
+  margin-bottom: 0.9em;
+  padding: 20px 24px 18px;
+  background: var(--card);
+  border-left: 5px solid var(--accent);
+  border-bottom: 1px solid var(--line);
 }
 
 #write h2 {
-  font-size: 1.6em;
-  background: var(--card);
-  border-left: 6px solid var(--accent);
-  padding: 14px 18px;
-  /* 移除圆角，回归纯粹的几何切割 */
-  border-radius: 0; 
+  font-size: 1.95em;
+  margin-top: 1.3em;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+#write h2::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 2px;
+  background: #80372b;
+  opacity: 0.8;
 }
 
 #write h3 {
-  font-size: 1.3em;
+  font-size: 1.5em;
+  margin-top: 1em;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+#write h4,
+#write h5,
+#write h6 {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 #write p {
-  margin-bottom: 1.2em;
+  margin-top: 0;
+  margin-bottom: 0.68em;
 }
 
 #write strong {
   font-weight: 700;
-  color: var(--accent); /* 用强调色标注加粗，增加视觉跳跃率 */
+  color: var(--text); /* 用强调色标注加粗，增加视觉跳跃率 */
+}
+
+#write em {
+  color: var(--muted);
+  font-style: normal;
+}
+
+#write hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 1.35em 0 1.5em;
 }
 
 /* ===== Block Elements (块级元素) ===== */
 #write ul, #write ol {
   background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 0; /* 移除圆角 */
-  padding: 16px 20px 16px 36px;
-  margin: 1.2em 0;
+  border: 1px solid #80372b;
+  border-left: 4px solid #80372b;
+  padding: 14px 18px 12px 34px;
+  margin: 0.75em 0 1.1em;
+  line-height: 1.5;
 }
 
 #write li {
-  margin-bottom: 0.4em;
+  margin-bottom: 0;
+  padding-left: 0.15em;
+}
+
+#write li + li {
+  margin-top: 0.32em;
+}
+
+#write li p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#write li::marker {
+  font-size: 0.95em;
 }
 
 /* 引用块样式 */
 #write blockquote {
   background: var(--card);
-  border-left: 4px solid var(--accent);
-  margin: 1.5em 0;
-  padding: 12px 20px;
-  color: #555;
+  border: 1px solid #80372b;
+  margin: 1.1em 0 1.4em;
+  padding: 14px 18px;
+  color: var(--muted);
 }
 
 /* 表格样式 (保持网格感) */
 #write table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1.5em 0;
+  margin: 1em 0 1.5em;
+  background: var(--card);
 }
 #write th, #write td {
   border: 1px solid var(--line);
-  padding: 10px 16px;
+  padding: 8px 12px;
   background: var(--card);
+  vertical-align: top;
 }
 #write th {
   font-weight: 700;
-  background: var(--bg);
+  background: #faf5ef;
   text-align: left;
+  color: var(--accent);
 }
 
-/* ===== Code Style: Simple GitHub-like ===== */
-#write code, .typora-export code {
-  background: #f6f8fa;
-  color: #24292f;
-  border: 1px solid var(--line); /* 统一边框颜色 */
-  border-radius: 3px; /* 代码块保留微小圆角以区分文本内容 */
-  padding: 0.2em 0.4em;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+#write p + h2,
+#write ul + h2,
+#write ol + h2,
+#write blockquote + h2,
+#write table + h2 {
+  margin-top: 1.6em;
+}
+
+#write > p {
+  background: var(--card);
+  border: 1px solid #80372b;
+  padding: 16px 18px;
+  margin-top: 0.75em;
+  margin-bottom: 0;
+}
+
+#write > p + p {
+  background: var(--card);
+  border: 1px solid #80372b;
+  border-top: 0;
+  padding-top: 4px;
+  padding-bottom: 16px;
+  padding-left: 18px;
+  padding-right: 18px;
+  margin-top: -1px;
+  margin-bottom: 0;
+}
+
+#write > blockquote,
+#write > table {
+  background: var(--card);
+  border: 1px solid #80372b;
+  margin-top: 0.75em;
+}
+
+#write mark {
+  background: var(--tag-bg);
+  color: var(--accent);
+  border: 1px solid var(--line);
+  padding: 0.05em 0.35em;
+}
+
+@media screen and (max-width: 900px) {
+  #write {
+    padding: 24px 20px 40px;
+    font-size: 14px;
+  }
+
+  #write h1 {
+    font-size: 2.3em;
+    padding: 16px 18px 14px;
+  }
+
+  #write h2 {
+    gap: 12px;
+    font-size: 1.65em;
+  }
+
+  #write h3 {
+    font-size: 1.3em;
+    gap: 12px;
+  }
+
+  #write h4,
+  #write h5,
+  #write h6 {
+    gap: 10px;
+  }
+}
+
+/* ===== Code Style: Typora GitHub-like ===== */
+.CodeMirror-lines {
+  padding-left: 4px;
+}
+
+.code-tooltip {
+  box-shadow: 0 1px 1px 0 rgba(0, 28, 36, .3);
+  border-top: 1px solid #eef2f2;
+}
+
+#write .md-fences,
+#write code,
+#write tt,
+.typora-export pre,
+.typora-export code,
+.typora-export tt {
+  border: 1px solid var(--line);
+  background-color: #ffffff;
+  border-radius: 0;
+  padding: 0;
+  padding: 2px 4px 0 4px;
   font-size: 0.9em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  color: #24292f;
 }
 
-#write pre, #write .md-fences, .typora-export pre {
-  background: #ffffff !important;
-  color: #24292f !important;
-  border: 1px solid var(--line); /* 统一边框颜色 */
-  border-radius: 0; /* 主代码块同样使用直角 */
-  padding: 16px;
-  margin: 1.5em 0;
-  line-height: 1.6;
+#write code,
+.typora-export code {
+  background-color: #ffffff;
+  padding: 0 2px 0 2px;
+}
+
+#write .md-fences,
+.typora-export pre {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding-top: 8px;
+  padding-bottom: 6px;
+  line-height: 1.45;
   box-shadow: none;
 }
 
-#write pre code, #write .md-fences code, .typora-export pre code {
+#write .md-fences {
+  background-color: #ffffff;
+}
+
+#write pre.md-meta-block,
+.typora-export pre.md-meta-block {
+  padding: 1rem;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border: 0;
+  border-radius: 0;
+  color: #777777;
+  margin-top: 0 !important;
+}
+
+#write .md-fences code,
+.typora-export pre code {
   background: transparent;
   border: 0;
   padding: 0;
   color: inherit;
-  font-size: 0.95em;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+#write .md-fences .CodeMirror pre,
+#write .md-fences .CodeMirror-line,
+.typora-export pre code {
+  line-height: 1.45;
+}
+
+@media print {
+  html {
+    font-size: 13px;
+  }
+
+  pre {
+    page-break-inside: avoid;
+    word-wrap: break-word;
+  }
 }
 
 /* 语法高亮 */
