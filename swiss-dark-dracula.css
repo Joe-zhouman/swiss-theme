@@ -468,3 +468,50 @@ html, body, .typora-export {
 #outline-content .outline-h6:hover {
   color: var(--accent);
 }
+
+/* TOC in document (inline) */
+#write .md-toc {
+  color: var(--text);
+}
+
+#write .md-toc a {
+  color: var(--cyan);
+  text-decoration: none;
+  border-bottom: none;
+}
+
+#write .md-toc a:hover {
+  color: var(--accent);
+}
+
+.md-toc.md-focus .md-toc-content {
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+
+.md-toc.md-focus .md-toc-item {
+  color: var(--text);
+}
+
+.md-toc.md-focus .md-toc-item:hover {
+  color: var(--accent);
+}
+
+/* Sidebar / file tree */
+.sidebar-content {
+  color: var(--text);
+}
+
+.file-list-item {
+  color: var(--text);
+}
+
+.file-list-item.active {
+  color: var(--accent);
+  background: var(--card);
+}
+
+#typora-sidebar {
+  background: var(--bg);
+  color: var(--text);
+}
