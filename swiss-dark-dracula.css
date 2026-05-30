@@ -1,4 +1,7 @@
+/* Swiss Dark Dracula — dark theme */
+
 :root {
+  /* Theme colors */
   --bg: #282a36;
   --accent: #bd93f9;
   --text: #f8f8f2;
@@ -12,6 +15,24 @@
   --yellow: #f1fa8c;
   --cyan: #8be9fd;
   --red: #ff5555;
+
+  /* Typora UI variables — critical for sidebar/TOC */
+  --bg-color: #282a36;
+  --text-color: #f8f8f2;
+  --side-bar-bg-color: #21222c;
+  --side-bar-text-color: #f8f8f2;
+  --window-border: 1px solid #44475a;
+  --active-file-bg-color: #44475a;
+  --active-file-text-color: #f8f8f2;
+  --active-file-border-color: #bd93f9;
+  --item-hover-bg-color: #343746;
+  --item-hover-text-color: #f8f8f2;
+  --primary-color: #bd93f9;
+  --primary-btn-border-color: #bd93f9;
+  --primary-btn-text-color: #282a36;
+  --meta-content-color: #6272a4;
+  --md-char-color: #6272a4;
+  --monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 html, body, .typora-export { 
