@@ -1,4 +1,4 @@
-/* Swiss Dark Dracula — dark theme */
+/* Swiss Dark Dracula - dark theme */
 
 :root {
   /* Theme colors */
@@ -16,29 +16,43 @@
   --cyan: #8be9fd;
   --red: #ff5555;
 
-  /* Typora UI variables — critical for sidebar/TOC */
+  /* Typora UI variables - critical for sidebar/TOC */
   --bg-color: #282a36;
   --text-color: #f8f8f2;
+  --text-normal: rgba(248, 248, 242, 0.88);
+  --text-link: #8be9fd;
+  --text-active-color: #ff79c6;
   --side-bar-bg-color: #21222c;
   --side-bar-text-color: #f8f8f2;
   --window-border: 1px solid #44475a;
-  --active-file-bg-color: #44475a;
+  --active-file-bg-color: #282a36;
   --active-file-text-color: #f8f8f2;
-  --active-file-border-color: #bd93f9;
+  --active-file-border-color: #44475a;
   --item-hover-bg-color: #343746;
   --item-hover-text-color: #f8f8f2;
+  --select-text-bg-color: #44475a;
+  --control-text-color: #f8f8f2;
+  --control-text-hover-color: #8be9fd;
   --primary-color: #bd93f9;
   --primary-btn-border-color: #bd93f9;
   --primary-btn-text-color: #282a36;
   --meta-content-color: #6272a4;
   --md-char-color: #6272a4;
+  --inline-code-bg: rgba(68, 71, 90, 0.5);
+  --inline-code-text: #f8f8f2;
+  --hr: rgba(248, 248, 242, 0.2);
+  --rawblock-edit-panel-bd: #151320;
   --monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 html, body, .typora-export { 
   background: var(--bg) !important; 
-  color: var(--text); 
+  color: var(--text);
   -webkit-font-smoothing: antialiased;
+}
+
+html, body, button, input, select, textarea, div.code-tooltip-content {
+  color: var(--text);
 }
 
 #write {
