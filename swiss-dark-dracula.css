@@ -407,3 +407,64 @@ html, body, .typora-export {
   background: #44475a;
   color: #f8f8f2;
 }
+
+/* ===== TOC / Outline Panel ===== */
+.md-toc {
+  color: var(--text);
+}
+
+.md-toc a {
+  color: var(--cyan);
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.md-toc a:hover {
+  color: var(--accent);
+  border-bottom: none;
+}
+
+.md-toc-content .md-toc-item {
+  color: var(--text);
+}
+
+.md-toc-content .md-toc-item:hover {
+  color: var(--accent);
+}
+
+.md-toc-content .md-toc-item.active {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Typora outline sidebar */
+#outline .outline-item {
+  color: var(--text);
+}
+
+#outline .outline-item:hover {
+  color: var(--accent);
+}
+
+#outline .outline-item.active {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+#outline-content .outline-h1,
+#outline-content .outline-h2,
+#outline-content .outline-h3,
+#outline-content .outline-h4,
+#outline-content .outline-h5,
+#outline-content .outline-h6 {
+  color: var(--text);
+}
+
+#outline-content .outline-h1:hover,
+#outline-content .outline-h2:hover,
+#outline-content .outline-h3:hover,
+#outline-content .outline-h4:hover,
+#outline-content .outline-h5:hover,
+#outline-content .outline-h6:hover {
+  color: var(--accent);
+}
