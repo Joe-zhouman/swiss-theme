@@ -1,4 +1,4 @@
-/* Swiss Dark Dracula - dark theme */
+/* Swiss Dark Dracula — dark theme */
 
 :root {
   /* Theme colors */
@@ -16,7 +16,7 @@
   --cyan: #8be9fd;
   --red: #ff5555;
 
-  /* Typora UI variables - critical for sidebar/TOC */
+  /* Typora UI variables — critical for sidebar/TOC */
   --bg-color: #282a36;
   --text-color: #f8f8f2;
   --text-normal: rgba(248, 248, 242, 0.88);
@@ -43,16 +43,59 @@
   --hr: rgba(248, 248, 242, 0.2);
   --rawblock-edit-panel-bd: #151320;
   --monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Force dark mode detection */
+  color-scheme: dark;
+  -webkit-color-scheme: dark;
+}
+
+html {
+  color-scheme: dark;
+  -webkit-color-scheme: dark;
 }
 
 html, body, .typora-export { 
-  background: var(--bg) !important; 
-  color: var(--text);
+  background: #282a36 !important; 
+  color: #f8f8f2;
   -webkit-font-smoothing: antialiased;
 }
 
 html, body, button, input, select, textarea, div.code-tooltip-content {
-  color: var(--text);
+  color: #f8f8f2;
+}
+
+/* Force all text to be light */
+#write, #write p, #write li, #write span, #write div {
+  color: #f8f8f2;
+}
+
+/* Force sidebar dark */
+.sidebar-content, #typora-sidebar, .file-tree-view, .file-list-item {
+  background: #21222c !important;
+  color: #f8f8f2 !important;
+}
+
+/* Force search/input fields */
+input, .search-panel, #search-panel {
+  background: #343746 !important;
+  color: #f8f8f2 !important;
+  border-color: #44475a !important;
+}
+
+/* Recent files list */
+.recent-file-item, .file-node, .file-library-node {
+  color: #f8f8f2 !important;
+}
+
+/* Typora source mode */
+#typora-source {
+  background: #282a36 !important;
+  color: #f8f8f2 !important;
+}
+
+.CodeMirror {
+  background: #282a36 !important;
+  color: #f8f8f2 !important;
 }
 
 #write {
